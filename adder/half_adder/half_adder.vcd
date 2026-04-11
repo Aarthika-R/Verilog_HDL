@@ -1,5 +1,5 @@
 $date
-	Sat Apr 11 16:14:11 2026
+	Sat Apr 11 16:45:13 2026
 $end
 $version
 	Icarus Verilog
@@ -8,15 +8,35 @@ $timescale
 	1s
 $end
 $scope module half_adder_tb $end
-$var wire 1 ! s $end
-$var wire 1 " r $end
-$var reg 1 # p $end
-$var reg 1 $ q $end
-$scope module dut $end
-$var wire 1 # a $end
-$var wire 1 $ b $end
-$var wire 1 ! carry $end
+$var wire 1 ! sum_g $end
+$var wire 1 " sum_d $end
+$var wire 1 # sum_b $end
+$var wire 1 $ carry_g $end
+$var wire 1 % carry_d $end
+$var wire 1 & carry_b $end
+$var reg 1 ' a_b $end
+$var reg 1 ( a_d $end
+$var reg 1 ) a_g $end
+$var reg 1 * b_b $end
+$var reg 1 + b_d $end
+$var reg 1 , b_g $end
+$scope module dut1 $end
+$var wire 1 ) a $end
+$var wire 1 , b $end
+$var wire 1 $ carry $end
+$var wire 1 ! sum $end
+$upscope $end
+$scope module dut2 $end
+$var wire 1 ( a $end
+$var wire 1 + b $end
+$var wire 1 % carry $end
 $var wire 1 " sum $end
+$upscope $end
+$scope module dut3 $end
+$var wire 1 ' a $end
+$var wire 1 * b $end
+$var reg 1 & carry $end
+$var reg 1 # sum $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -25,19 +45,57 @@ $dumpall
 $end
 #0
 $dumpvars
+0,
+x+
+x*
+0)
+x(
+x'
+x&
+x%
 0$
-0#
-0"
+x#
+x"
 0!
 $end
 #10
-1"
-1$
-#20
-0$
-1#
-#30
-0"
 1!
+1,
+#20
+0,
+1)
+#30
+0!
 1$
+1,
 #40
+0"
+0%
+0+
+0(
+#50
+1"
+1+
+#60
+0+
+1(
+#70
+0"
+1%
+1+
+#80
+0&
+0#
+0*
+0'
+#90
+1#
+1*
+#100
+0*
+1'
+#110
+1&
+0#
+1*
+#120
