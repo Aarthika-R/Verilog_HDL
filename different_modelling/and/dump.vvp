@@ -1,0 +1,178 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000019a8cecbda0 .scope module, "and_tb" "and_tb" 2 1;
+ .timescale 0 0;
+v0000019a8cf2e410_0 .var "b_a", 0 0;
+v0000019a8cf2e5f0_0 .var "b_b", 0 0;
+v0000019a8cf2dd30_0 .net "b_y", 0 0, v0000019a8ced69f0_0;  1 drivers
+v0000019a8cf2e7d0_0 .var "d_a", 0 0;
+v0000019a8cf2e190_0 .var "d_b", 0 0;
+v0000019a8cf2da10_0 .net "d_y", 0 0, L_0000019a8cedf520;  1 drivers
+v0000019a8cf2ddd0_0 .var "g_a", 0 0;
+v0000019a8cf2dbf0_0 .var "g_b", 0 0;
+v0000019a8cf2e4b0_0 .net "g_y", 0 0, L_0000019a8cf2e8e0;  1 drivers
+v0000019a8cf2e690_0 .var "s_a", 0 0;
+v0000019a8cf2e2d0_0 .var "s_b", 0 0;
+RS_0000019a8cee1428 .resolv tri, L_0000019a8cf2efe0, L_0000019a8cf2f1a0;
+v0000019a8cf2e550_0 .net8 "s_y", 0 0, RS_0000019a8cee1428;  2 drivers, strength-aware
+S_0000019a8cecbf30 .scope module, "dut" "behavioural" 2 5, 3 1 0, S_0000019a8cecbda0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+v0000019a8ce86fd0_0 .net "a", 0 0, v0000019a8cf2e410_0;  1 drivers
+v0000019a8cecc0c0_0 .net "b", 0 0, v0000019a8cf2e5f0_0;  1 drivers
+v0000019a8ced69f0_0 .var "y", 0 0;
+E_0000019a8cecced0 .event anyedge, v0000019a8cecc0c0_0, v0000019a8ce86fd0_0;
+S_0000019a8ced6a90 .scope module, "dut1" "gatelevel" 2 7, 3 15 0, S_0000019a8cecbda0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000019a8cf2e8e0 .functor AND 1, v0000019a8cf2ddd0_0, v0000019a8cf2dbf0_0, C4<1>, C4<1>;
+v0000019a8ced6c20_0 .net "a", 0 0, v0000019a8cf2ddd0_0;  1 drivers
+v0000019a8ced6cc0_0 .net "b", 0 0, v0000019a8cf2dbf0_0;  1 drivers
+v0000019a8cf2d970_0 .net "y", 0 0, L_0000019a8cf2e8e0;  alias, 1 drivers
+S_0000019a8ced61c0 .scope module, "uut" "dataflow" 2 6, 3 9 0, S_0000019a8cecbda0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000019a8cedf520 .functor AND 1, v0000019a8cf2e7d0_0, v0000019a8cf2e190_0, C4<1>, C4<1>;
+v0000019a8cf2dab0_0 .net "a", 0 0, v0000019a8cf2e7d0_0;  1 drivers
+v0000019a8cf2df10_0 .net "b", 0 0, v0000019a8cf2e190_0;  1 drivers
+v0000019a8cf2dfb0_0 .net "y", 0 0, L_0000019a8cedf520;  alias, 1 drivers
+S_0000019a8ced6350 .scope module, "uut1" "switchlevel" 2 8, 3 21 0, S_0000019a8cecbda0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000019a8cedf9f0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0000019a8cf2ef00 .functor PMOS 1, L_0000019a8cedf9f0, v0000019a8cf2e690_0, C4<0>, C4<0>;
+L_0000019a8cf2ee20 .functor PMOS 1, L_0000019a8cedf9f0, v0000019a8cf2e2d0_0, C4<0>, C4<0>;
+L_0000019a8cedf910 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0000019a8cf2f4b0 .functor NMOS 1, L_0000019a8cedf910, v0000019a8cf2e690_0, C4<0>, C4<0>;
+L_0000019a8cf2ebf0 .functor NMOS 1, L_0000019a8cf2f4b0, v0000019a8cf2e2d0_0, C4<0>, C4<0>;
+RS_0000019a8cee1458 .resolv tri, L_0000019a8cf2ef00, L_0000019a8cf2ee20, L_0000019a8cf2ebf0;
+L_0000019a8cf2efe0 .functor PMOS 1, L_0000019a8cedf9f0, RS_0000019a8cee1458, C4<0>, C4<0>;
+L_0000019a8cf2f1a0 .functor NMOS 1, L_0000019a8cedf910, RS_0000019a8cee1458, C4<0>, C4<0>;
+v0000019a8cf2e370_0 .net "a", 0 0, v0000019a8cf2e690_0;  1 drivers
+v0000019a8cf2de70_0 .net "b", 0 0, v0000019a8cf2e2d0_0;  1 drivers
+v0000019a8cf2e230_0 .net8 "gnd", 0 0, L_0000019a8cedf910;  1 drivers, strength-aware
+v0000019a8cf2e050_0 .net8 "n", 0 0, L_0000019a8cf2f4b0;  1 drivers, strength-aware
+v0000019a8cf2e0f0_0 .net8 "vdd", 0 0, L_0000019a8cedf9f0;  1 drivers, strength-aware
+v0000019a8cf2db50_0 .net8 "y", 0 0, RS_0000019a8cee1428;  alias, 2 drivers, strength-aware
+v0000019a8cf2dc90_0 .net8 "y1", 0 0, RS_0000019a8cee1458;  3 drivers, strength-aware
+    .scope S_0000019a8cecbf30;
+T_0 ;
+    %wait E_0000019a8cecced0;
+    %load/vec4 v0000019a8ce86fd0_0;
+    %load/vec4 v0000019a8cecc0c0_0;
+    %and;
+    %store/vec4 v0000019a8ced69f0_0, 0, 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0000019a8cecbda0;
+T_1 ;
+    %vpi_call 2 11 "$dumpfile", "wave.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000019a8cecbda0 {0 0 0};
+    %vpi_call 2 13 "$monitor", "and behavioural a=%b  b=%b  y=%b", v0000019a8cf2e410_0, v0000019a8cf2e5f0_0, v0000019a8cf2dd30_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e410_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e5f0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e410_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e5f0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e410_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e5f0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e410_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e5f0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 19 "$monitor", "and dataflow a=%b  b=%b  y=%b", v0000019a8cf2e7d0_0, v0000019a8cf2e190_0, v0000019a8cf2da10_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e7d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e190_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e7d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e190_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e7d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e190_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e7d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e190_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 24 "$monitor", "and gatelevel a=%b  b=%b  y=%b", v0000019a8cf2ddd0_0, v0000019a8cf2dbf0_0, v0000019a8cf2e4b0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2ddd0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2dbf0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2ddd0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2dbf0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2ddd0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2dbf0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2ddd0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2dbf0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 29 "$monitor", "and switchlevel a=%b  b=%b  y=%b", v0000019a8cf2e690_0, v0000019a8cf2e2d0_0, v0000019a8cf2e550_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e690_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e2d0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e690_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e2d0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e690_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019a8cf2e2d0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e690_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019a8cf2e2d0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 34 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "and_tb.v";
+    "and_gate.v";
