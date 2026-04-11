@@ -1,4 +1,5 @@
-
+`include "../../universalGates/nand/nand_gate.v"
+`include "../../universalGates/nor/nor_gate.v"
 module and_by_nand (
     y,a,b
 );
@@ -18,36 +19,36 @@ module and_by_nor (
     nor_gate nor3(.a(t1),.b(t2),.y(y));
 endmodule
 
-module nor_gate (
-    output y,input a,b
-);
-    supply1 vdd;
-    supply0 gnd;
-    wire p;
-    //series pmos(drain,soure,gate)
-    pmos (p,vdd,a);
-    pmos (y,p,b);
+// module nor_gate (
+//     output y,input a,b
+// );
+//     supply1 vdd;
+//     supply0 gnd;
+//     wire p;
+//     //series pmos(drain,soure,gate)
+//     pmos (p,vdd,a);
+//     pmos (y,p,b);
 
-    //parallel nmos(drain source gate)
+//     //parallel nmos(drain source gate)
 
-    nmos(y,gnd,a);
-    nmos(y,gnd,b);
+//     nmos(y,gnd,a);
+//     nmos(y,gnd,b);
 
-endmodule
+// endmodule
 
 
-module nand_gate(output y, input a,b);
-    supply1 vdd;
-    supply0 gnd;
+// module nand_gate(output y, input a,b);
+//     supply1 vdd;
+//     supply0 gnd;
     
-    wire n;
-    //pmos(darin,source,gate)
-    pmos s1(y,vdd,a);
-    pmos s2(y,vdd,b);
+//     wire n;
+//     //pmos(darin,source,gate)
+//     pmos s1(y,vdd,a);
+//     pmos s2(y,vdd,b);
 
-    //nmos(drain,source,gate)
-    nmos(n,gnd,b);
-    nmos(y,n,a);
+//     //nmos(drain,source,gate)
+//     nmos(n,gnd,b);
+//     nmos(y,n,a);
     
     
-endmodule
+// endmodule
