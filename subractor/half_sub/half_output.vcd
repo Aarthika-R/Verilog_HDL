@@ -1,5 +1,5 @@
 $date
-	Sat Apr 11 16:22:54 2026
+	Sat Apr 11 20:04:04 2026
 $end
 $version
 	Icarus Verilog
@@ -8,15 +8,36 @@ $timescale
 	1s
 $end
 $scope module half_tb $end
-$var wire 1 ! diff $end
-$var wire 1 " bor $end
-$var reg 1 # a $end
-$var reg 1 $ b $end
-$scope module dut $end
-$var wire 1 # a $end
-$var wire 1 $ b $end
-$var wire 1 " bor $end
-$var wire 1 ! diff $end
+$var wire 1 ! diff_g $end
+$var wire 1 " diff_d $end
+$var wire 1 # diff_b $end
+$var wire 1 $ bor_g $end
+$var wire 1 % bor_d $end
+$var wire 1 & bor_b $end
+$var reg 1 ' a_b $end
+$var reg 1 ( a_d $end
+$var reg 1 ) a_g $end
+$var reg 1 * b_b $end
+$var reg 1 + b_d $end
+$var reg 1 , b_g $end
+$scope module dut_behavioural $end
+$var wire 1 ) a $end
+$var wire 1 , b $end
+$var reg 1 $ bor $end
+$var reg 1 ! diff $end
+$upscope $end
+$scope module dut_dataflow $end
+$var wire 1 ' a $end
+$var wire 1 * b $end
+$var wire 1 & bor $end
+$var wire 1 # diff $end
+$upscope $end
+$scope module dut_gatelevel $end
+$var wire 1 ( a $end
+$var wire 1 + b $end
+$var wire 1 % bor $end
+$var wire 1 " diff $end
+$var wire 1 - n $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -25,20 +46,63 @@ $dumpall
 $end
 #0
 $dumpvars
-0$
+x-
+x,
+x+
+0*
+x)
+x(
+0'
+0&
+x%
+x$
 0#
-0"
-0!
+x"
+x!
 $end
 #10
-1!
-1"
-1$
-#20
-0"
-0$
 1#
+1&
+1*
+#20
+0&
+0*
+1'
 #30
-0!
-1$
+0#
+1*
 #40
+0$
+0!
+0,
+0)
+#50
+1$
+1!
+1,
+#60
+0$
+0,
+1)
+#70
+0!
+1,
+#80
+0%
+0"
+1-
+0+
+0(
+#90
+1"
+1%
+1+
+#100
+0%
+0-
+0+
+1(
+#110
+0"
+1+
+#120
