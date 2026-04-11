@@ -1,0 +1,92 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001e48c346950 .scope module, "not_tb" "not_tb" 2 1;
+ .timescale 0 0;
+v000001e48c3a4170_0 .var "nand_a", 0 0;
+RS_000001e48c35b098 .resolv tri, L_000001e48c345790, L_000001e48c3455d0, L_000001e48c3459c0;
+v000001e48c3a3950_0 .net8 "nand_y", 0 0, RS_000001e48c35b098;  3 drivers, strength-aware
+v000001e48c3a3db0_0 .var "nor_a", 0 0;
+RS_000001e48c35b278 .resolv tri, L_000001e48c345a30, L_000001e48c345720, L_000001e48c3454f0;
+v000001e48c3a4490_0 .net8 "nor_y", 0 0, RS_000001e48c35b278;  3 drivers, strength-aware
+S_000001e48c3571c0 .scope module, "dut" "not_by_nand" 2 6, 3 9 0, S_000001e48c346950;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 1 "a";
+v000001e48c3a4210_0 .net "a", 0 0, v000001e48c3a4170_0;  1 drivers
+v000001e48c3a42b0_0 .net8 "y", 0 0, RS_000001e48c35b098;  alias, 3 drivers, strength-aware
+S_000001e48c357350 .scope module, "nand1" "nand_gate" 3 12, 4 1 0, S_000001e48c3571c0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_000001e48c345560 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_000001e48c345790 .functor PMOS 1, L_000001e48c345560, v000001e48c3a4170_0, C4<0>, C4<0>;
+L_000001e48c3455d0 .functor PMOS 1, L_000001e48c345560, v000001e48c3a4170_0, C4<0>, C4<0>;
+L_000001e48c345950 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_000001e48c3456b0 .functor NMOS 1, L_000001e48c345950, v000001e48c3a4170_0, C4<0>, C4<0>;
+L_000001e48c3459c0 .functor NMOS 1, L_000001e48c3456b0, v000001e48c3a4170_0, C4<0>, C4<0>;
+v000001e48c307010_0 .net "a", 0 0, v000001e48c3a4170_0;  alias, 1 drivers
+v000001e48c307230_0 .net "b", 0 0, v000001e48c3a4170_0;  alias, 1 drivers
+v000001e48c346ae0_0 .net8 "gnd", 0 0, L_000001e48c345950;  1 drivers, strength-aware
+v000001e48c346b80_0 .net8 "n", 0 0, L_000001e48c3456b0;  1 drivers, strength-aware
+v000001e48c3574e0_0 .net8 "vdd", 0 0, L_000001e48c345560;  1 drivers, strength-aware
+v000001e48c3a3ef0_0 .net8 "y", 0 0, RS_000001e48c35b098;  alias, 3 drivers, strength-aware
+S_000001e48c30ea10 .scope module, "uut" "not_by_nor" 2 5, 3 4 0, S_000001e48c346950;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 1 "a";
+v000001e48c3a3a90_0 .net "a", 0 0, v000001e48c3a3db0_0;  1 drivers
+v000001e48c3a47b0_0 .net8 "y", 0 0, RS_000001e48c35b278;  alias, 3 drivers, strength-aware
+S_000001e48c30eba0 .scope module, "nor1" "nor_gate" 3 7, 5 1 0, S_000001e48c30ea10;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+L_000001e48c345800 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_000001e48c345b10 .functor PMOS 1, L_000001e48c345800, v000001e48c3a3db0_0, C4<0>, C4<0>;
+L_000001e48c345a30 .functor PMOS 1, L_000001e48c345b10, v000001e48c3a3db0_0, C4<0>, C4<0>;
+L_000001e48c345870 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_000001e48c345720 .functor NMOS 1, L_000001e48c345870, v000001e48c3a3db0_0, C4<0>, C4<0>;
+L_000001e48c3454f0 .functor NMOS 1, L_000001e48c345870, v000001e48c3a3db0_0, C4<0>, C4<0>;
+v000001e48c3a4710_0 .net "a", 0 0, v000001e48c3a3db0_0;  alias, 1 drivers
+v000001e48c3a3f90_0 .net "b", 0 0, v000001e48c3a3db0_0;  alias, 1 drivers
+v000001e48c3a4350_0 .net8 "gnd", 0 0, L_000001e48c345870;  1 drivers, strength-aware
+v000001e48c3a40d0_0 .net8 "p", 0 0, L_000001e48c345b10;  1 drivers, strength-aware
+v000001e48c3a43f0_0 .net8 "vdd", 0 0, L_000001e48c345800;  1 drivers, strength-aware
+v000001e48c3a38b0_0 .net8 "y", 0 0, RS_000001e48c35b278;  alias, 3 drivers, strength-aware
+    .scope S_000001e48c346950;
+T_0 ;
+    %vpi_call 2 9 "$dumpfile", "wave.vcd" {0 0 0};
+    %vpi_call 2 10 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001e48c346950 {0 0 0};
+    %vpi_call 2 12 "$monitor", "not by nor  a=%b  y=%b", v000001e48c3a3db0_0, v000001e48c3a4490_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001e48c3a3db0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001e48c3a3db0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 16 "$monitor", "not by nand a=%b  y=%b", v000001e48c3a4170_0, v000001e48c3a3950_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001e48c3a4170_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001e48c3a4170_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 19 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "not_tb.v";
+    "not_gate.v";
+    "./../../universalGates/nand/nand_gate.v";
+    "./../../universalGates/nor/nor_gate.v";
