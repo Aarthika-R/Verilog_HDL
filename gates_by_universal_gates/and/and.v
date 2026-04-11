@@ -1,7 +1,7 @@
 `include "../../universalGates/nand/nand_gate.v"
 `include "../../universalGates/nor/nor_gate.v"
 module and_by_nand (
-    a,b,y
+    y,a,b
 );
     input a,b;
     output y;
