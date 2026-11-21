@@ -1,0 +1,152 @@
+$date
+	Sat Nov 21 18:47:14 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 1 ! zero $end
+$var wire 1 " overflow $end
+$var wire 16 # out [15:0] $end
+$var wire 1 $ negative $end
+$var wire 1 % carry $end
+$var reg 16 & a [15:0] $end
+$var reg 16 ' b [15:0] $end
+$var reg 3 ( ctl [2:0] $end
+$scope module dut $end
+$var wire 16 ) a [15:0] $end
+$var wire 16 * b [15:0] $end
+$var wire 3 + ctl [2:0] $end
+$var parameter 3 , ADD $end
+$var parameter 3 - AND $end
+$var parameter 3 . NOT $end
+$var parameter 3 / OR $end
+$var parameter 3 0 SHL $end
+$var parameter 3 1 SHR $end
+$var parameter 3 2 SUB $end
+$var parameter 3 3 XOR $end
+$var reg 1 % carry $end
+$var reg 1 $ negative $end
+$var reg 16 4 out [15:0] $end
+$var reg 17 5 out_temp [16:0] $end
+$var reg 1 " overflow $end
+$var reg 1 ! zero $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 3
+b1 2
+b111 1
+b110 0
+b11 /
+b101 .
+b10 -
+b0 ,
+$end
+#0
+$dumpvars
+b1111 5
+b1111 4
+b0 +
+b101 *
+b1010 )
+b0 (
+b101 '
+b1010 &
+0%
+0$
+b1111 #
+0"
+0!
+$end
+#10
+b1100 #
+b1100 4
+b1100 5
+b1 (
+b1 +
+b1000 '
+b1000 *
+b10100 &
+b10100 )
+#20
+b1111 #
+b1111 4
+b0 5
+b10 (
+b10 +
+b111100001111 '
+b111100001111 *
+b11111111 &
+b11111111 )
+#30
+b11111111 #
+b11111111 4
+b11 (
+b11 +
+b1111 '
+b1111 *
+b11110000 &
+b11110000 )
+#40
+1$
+b1111111111111111 #
+b1111111111111111 4
+b100 (
+b100 +
+b101010101010101 '
+b101010101010101 *
+b1010101010101010 &
+b1010101010101010 )
+#50
+b1111111100000000 #
+b1111111100000000 4
+b101 (
+b101 +
+b0 '
+b0 *
+b11111111 &
+b11111111 )
+#60
+0$
+b1100 #
+b1100 4
+b110 (
+b110 +
+b10 '
+b10 *
+b11 &
+b11 )
+#70
+b100 #
+b100 4
+b111 (
+b111 +
+b10000 &
+b10000 )
+#80
+1!
+b0 #
+b0 4
+b1 (
+b1 +
+b1010 '
+b1010 *
+b1010 &
+b1010 )
+#90
+1%
+b10000000000000000 5
+1!
+b0 (
+b0 +
+b1 '
+b1 *
+b1111111111111111 &
+b1111111111111111 )
+#100
